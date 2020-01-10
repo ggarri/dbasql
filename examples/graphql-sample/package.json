@@ -1,0 +1,27 @@
+{
+  "name": "graphql-sample",
+  "version": "0.1.0",
+  "description": "A GraphQL sample project using Express.js and Apollo",
+  "main": "index.js",
+  "author": "Andrew Zappella",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "apollo-server-express": "^1.3.4",
+    "body-parser": "^1.18.2",
+    "cookie-parser": "^1.4.3",
+    "dotenv": "^5.0.1",
+    "express": "^4.16.3",
+    "graphql": "^0.13.2",
+    "graphql-tools": "^2.23.1",
+    "hbs": "^4.0.1",
+    "morgan": "^1.9.0",
+    "serve-favicon": "^2.5.0"
+  },
+  "scripts": {
+    "start": "TZ=UTC NODE_ENV=development PORT=3003 nodemon --inspect=0.0.0.0:9230 ./bin/www"
+  },
+  "devDependencies": {
+    "nodemon": "^1.17.3"
+  }
+}

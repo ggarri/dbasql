@@ -1,0 +1,21 @@
+// @flow
+
+/**
+ * Created by ggarrido on 24/06/17.
+ */
+
+/* eslint no-unused-vars: 0 */
+
+interface dbase7ql$ConnectorServiceInterface {
+    getConnection(poolName: string): Promise<dbase7ql$Connector>,
+    updateConnection(poolName: string, newParams: Object): boolean
+}
+
+interface dbase7ql$OrmServiceInterface {
+    getModels(poolName: string, scopeName: string): dbase7ql$mapOrmModel
+}
+
+interface dbase7ql$ModelFactoryInterface {
+    init(schema: dbase7ql$modelSchema, sequelize: dbase7ql$Connector): dbase7ql$OrmModel,
+    associate(schema: dbase7ql$modelSchema, models: dbase7ql$OrmModel): dbase7ql$OrmModel
+}
