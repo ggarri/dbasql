@@ -1,0 +1,82 @@
+// @flow
+
+/**
+ * Created by ggarrido on 27/06/17.
+ */
+
+
+type dbase7ql$Connector = {
+    query(query: string): Promise<Object>,
+    query(query: string, options: Object): Promise<Object>,
+    define(modelName: string, attributes: Array<sequelize$attribute>, options?: Object): OrmModel
+};
+
+type dbase7ql$modelSchema = {
+    attributes: {
+        ...Object,
+        [key:string]: Object
+    },
+    name?: string,
+    tableName?: string,
+    options?: Object,
+    QueryTypes: Object,
+    AssociationTypes: Object,
+};
+
+type dbase7ql$schemaScope = {
+    schemaContext: string,
+    schemaPath: string
+};
+
+type dbase7ql$apiQuery = {
+    columns?: Array<string>,
+    with?: {
+        [key:string]: dbase7ql$apiQuery
+    },
+    where?: Object,
+    attributes?: Object,
+    order?: Object,
+};
+
+type dbase7ql$queryHandler = {
+    getIncludeValue(model: msa$ormModel, query: msa$apiQuery): Array<Object>,
+    getAttributeValue(query: msa$apiQuery): Array<string>,
+    getSequelizeQuery(model: msa$ormModel, query: msa$apiQuery): sequelize$query
+};
+
+type dbase7ql$modelObject = {
+    ...Object,
+    set(attributes: Object): msa$model
+};
+
+type dbase7ql$OrmModel = {
+    hasOne(model: dbase7ql$OrmModel, target: sequelize$modelTarget, options?: Object): void,
+    belongsTo(model: dbase7ql$OrmModel, target: sequelize$modelTarget, options?: Object): void,
+    hasMany(model: dbase7ql$OrmModel, target: sequelize$modelTarget, options?: Object): void,
+    belongsToMany(model: dbase7ql$OrmModel, target: sequelize$modelTarget, options?: Object): void,
+    findAll(options: Object): Promise<Array<dbase7ql$modelObject>>,
+    findById(id: number, options: object): Promise<dbase7ql$modelObject>,
+    build(attributes: Object): Promise<dbase7ql$modelObject>,
+    destroy(options: Object): Promise<integer>,
+    save(options: Object): Promise<OrmModel> | Error,
+    associations: {
+        ...Objects,
+        [key:string]: OrmModel
+    }
+};
+
+/**
+ * MAP TYPES
+ */
+
+type dbase7ql$mapOrmModel = {
+    ...Object,
+    [key:string]: dbase7ql$OrmModel
+};
+
+type dbase7ql$mapModelSchema = {
+    ...Object,
+    [key:string]: dbase7ql$modelSchema
+};
+
+

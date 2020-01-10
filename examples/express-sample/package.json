@@ -1,0 +1,23 @@
+{
+  "name": "express-test",
+  "version": "0.0.0",
+  "private": true,
+  "dependencies": {
+    "body-parser": "~1.17.1",
+    "cookie-parser": "~1.4.3",
+    "dbaseql": "git+ssh://git@github.com/base7/dbaseql.git",
+    "debug": "~2.6.3",
+    "express": "~4.15.2",
+    "jade": "~1.11.0",
+    "lodash": "^4.17.4",
+    "morgan": "~1.8.1",
+    "serve-favicon": "~2.4.2"
+  },
+  "scripts": {
+    "start": "TZ=UTC NODE_ENV=development PORT=3004 nodemon --inspect=0.0.0.0:9222 ./bin/www",
+    "postinstall": "ln -nsf ../src/ node_modules/app"
+  },
+  "devDependencies": {
+    "nodemon": "^1.17.3"
+  }
+}

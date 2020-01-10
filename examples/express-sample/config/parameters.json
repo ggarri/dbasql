@@ -1,0 +1,8 @@
+{
+  "db_host": "localhost",
+  "db_user": "dev",
+  "db_pass": "dev",
+  "db_driver": "postgres",
+  "db_schema": "public",
+  "db_name": "express_test"
+}
