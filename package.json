@@ -33,7 +33,7 @@
     "path": "^0.12.7",
     "pg": "^6.1.5",
     "pg-hstore": "^2.3.2",
-    "sequelize": "^3.30.4",
+    "sequelize": "^5.15.1",
     "flow-bin": "^0.48.0",
     "flow-remove-types": "^1.2.1",
     "flow-typed": "^2.1.2",
